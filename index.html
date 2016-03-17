@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link data-require="bootstrap-css@3.3.6" data-semver="3.3.6" rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.css" />
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular.min.js">
+   </script>
+    <script src="js/madlib.controller.js"></script>
+  </head>
+
+  <body ng-app="madlib">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-8 col-md-offset-2 border">
+          <div class="row border">
+            <div class="col-md-3 masthead text-center border-right">
+              <img class="smileyFace" ng-src="img/mad-lib-happy-face.png" alt="mad-lib-happy-face"/>
+            </div>
+            <div class="col-md-9 text-center masthead">
+              <img class="logo" ng-src="img/ng-mad-libs-logo.png" alt="ng-mad-libs-logo"/>
+              <h1>Automate This!</h1>
+            </div>
+          </div>
+          <div ng-controller="MadlibController">
+            <div class="row pad25 border">
+              <h2>Provide the following words:</h2>
+              <div class="col-md-4">
+                <input type="text" class="form-control" ng-model="word.female">
+                <input type="text" class="form-control" ng-model="word.job">
+                <input type="text" class="form-control" ng-model="word.tediousTask">
+              </div>
+              <div class="col-md-4">
+                <input type="text" class="form-control" ng-model="word.dirtyTask">
+                <input type="text" class="form-control" ng-model="word.celebrity">
+                <input type="text" class="form-control" ng-model="word.skill">
+              </div>
+              <div class="col-md-4">
+                <input type="text" class="form-control" ng-model="word.adjective">
+                <input type="text" class="form-control" ng-model="word.obnoxiousCelebrity">
+                <input type="text" class="form-control" ng-model="word.hugeNumber">
+              </div>
+            </div>
+              <div class="row pad25 border">
+                <p>
+                  {{word.female}} was a {{word.job}} who loved technology. Although she loved parts of her job, she absolutely hated  {{word.tediousTask}} and {{word.dirtyTask}}. So, {{word.female}} met with her life mentor {{word.celebrity}} who told her to learn how to {{word.skill}} with Thinkful. Thinkful didn't offer a course on {{word.skill}} so she studied programming instead. 
+                </p>
+                <p>
+                What a great decision! With her new skills, {{word.female}} built a(n) {{word.adjective}} robot named {{word.obnoxiousCelebrity}} that not only loved {{word.dirtyTask}} but did it {{word.hugeNumber}} faster. 
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
