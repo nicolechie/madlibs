@@ -1,6 +1,3 @@
-/*div {
-	border: 1px solid black;
-}*/
 .smileyFace {
 	height: 90%;
 	margin-top: 5%;
@@ -19,7 +16,11 @@
 .pad25 {
 	padding: 25px;
 }
-input {
+.pad0 {
+	padding-left: 0 !important;
+	padding-right: 20px !important;
+}
+input, select {
 	margin-bottom: 5px;
 }
 .border {

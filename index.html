@@ -26,8 +26,17 @@
           <div ng-controller="MadlibController">
             <div class="row pad25 border">
               <h2>Provide the following words:</h2>
+              <div class="col-md-12"> 
+                <div class="col-md-4 pad0">                
+                  <select name="singleSelect" class="form-control" ng-model="genderType" 
+                  ng-change="change(genderType.type)"
+                  ng-options="gender.type for gender in genders">
+                    <option value="">Choose Gender</option>
+                  </select>
+                </div>
+              </div>
               <div class="col-md-4">
-                <input type="text" class="form-control" ng-model="word.female">
+                <input type="text" class="form-control" ng-model="word.name">
                 <input type="text" class="form-control" ng-model="word.job">
                 <input type="text" class="form-control" ng-model="word.tediousTask">
               </div>
@@ -44,10 +53,10 @@
             </div>
               <div class="row pad25 border">
                 <p>
-                  {{word.female}} was a {{word.job}} who loved technology. Although she loved parts of her job, she absolutely hated  {{word.tediousTask}} and {{word.dirtyTask}}. So, {{word.female}} met with her life mentor {{word.celebrity}} who told her to learn how to {{word.skill}} with Thinkful. Thinkful didn't offer a course on {{word.skill}} so she studied programming instead. 
+                  {{word.name}} was a {{word.job}} who loved technology. Although <!-- {{genderType.type==='male' ?'he':'she'}} -->{{gender2}} loved parts of {{gender1}} job, {{gender2}} absolutely hated  {{word.tediousTask}} and {{word.dirtyTask}}. So, {{word.name}} met with {{gender1}} life mentor {{word.celebrity}} who told {{gender3}} to learn how to {{word.skill}} with Thinkful. Thinkful didn't offer a course on {{word.skill}} so {{gender2}} studied programming instead. 
                 </p>
                 <p>
-                What a great decision! With her new skills, {{word.female}} built a(n) {{word.adjective}} robot named {{word.obnoxiousCelebrity}} that not only loved {{word.dirtyTask}} but did it {{word.hugeNumber}} faster. 
+                  What a great decision! With {{gender1}} new skills, {{word.name}} built a(n) {{word.adjective}} robot named {{word.obnoxiousCelebrity}} that not only loved {{word.dirtyTask}} but did it {{word.hugeNumber}} faster. 
                 </p>
               </div>
             </div>
