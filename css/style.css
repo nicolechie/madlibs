@@ -20,6 +20,9 @@
 	padding-left: 0 !important;
 	padding-right: 20px !important;
 }
+.padr0 {
+	padding-right: 0 !important;
+}
 input, select {
 	margin-bottom: 5px;
 }

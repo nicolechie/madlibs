@@ -7,6 +7,8 @@
     <link rel="stylesheet" type="text/css" href="css/style.css" />
    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular.min.js">
    </script>
+    <script src="https://code.angularjs.org/1.5.0/angular-messages.js">
+   </script>
     <script src="js/madlib.controller.js"></script>
   </head>
 
@@ -23,41 +25,56 @@
               <h1>Automate This!</h1>
             </div>
           </div>
+
           <div ng-controller="MadlibController">
-            <div class="row pad25 border">
+            <div ng-show="showWordOptions" class="row pad25 border">
               <h2>Provide the following words:</h2>
-              <div class="col-md-12"> 
-                <div class="col-md-4 pad0">                
-                  <select name="singleSelect" class="form-control" ng-model="genderType" 
-                  ng-change="change(genderType.type)"
-                  ng-options="gender.type for gender in genders">
-                    <option value="">Choose Gender</option>
-                  </select>
+              <form name="wordInputs" ng-submit="generate()">
+                <div class="col-md-12"> 
+                  <div class="col-md-4 pad0">                
+                    <select name="singleSelect" class="form-control" ng-model="genderType" required
+                    ng-change="change(genderType.type)"
+                    ng-options="gender.type for gender in genders">
+                      <option value="">Choose Gender</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <input type="text" class="form-control" placeholder="Name" ng-model="word.name" required>
+                  <input type="text" class="form-control" placeholder="Job Title" ng-model="word.job" required>
+                  <input type="text" class="form-control" placeholder="Tedious Task" ng-model="word.tediousTask" required>
+                </div>
+                <div class="col-md-4">
+                  <input type="text" class="form-control" placeholder="Dirty Task" ng-model="word.dirtyTask" required>
+                  <input type="text" class="form-control" placeholder="Celebrity" ng-model="word.celebrity" required>
+                  <input type="text" class="form-control" placeholder="Useless Skill" ng-model="word.skill" required>
+                </div>
+                <div class="col-md-4">
+                  <input type="text" class="form-control" placeholder="Adjective" ng-model="word.adjective" required>
+                  <input type="text" class="form-control" placeholder="Obnoxious Celebrity" ng-model="word.obnoxiousCelebrity" required>
+                  <input type="number" class="form-control" placeholder="Huge Number" ng-model="word.hugeNumber" step="10" required>
+                </div>
+                <div class="col-md-12"> 
+                <hr>
+                  <div class="col-md-4 col-md-offset-8 padr0">                
+                    <button type="submit" class="btn btn-default pull-right ">Generate My Mad Lib</button>
+                  </div>
                 </div>
               </div>
-              <div class="col-md-4">
-                <input type="text" class="form-control" ng-model="word.name">
-                <input type="text" class="form-control" ng-model="word.job">
-                <input type="text" class="form-control" ng-model="word.tediousTask">
-              </div>
-              <div class="col-md-4">
-                <input type="text" class="form-control" ng-model="word.dirtyTask">
-                <input type="text" class="form-control" ng-model="word.celebrity">
-                <input type="text" class="form-control" ng-model="word.skill">
-              </div>
-              <div class="col-md-4">
-                <input type="text" class="form-control" ng-model="word.adjective">
-                <input type="text" class="form-control" ng-model="word.obnoxiousCelebrity">
-                <input type="text" class="form-control" ng-model="word.hugeNumber">
-              </div>
-            </div>
-              <div class="row pad25 border">
+            </form>
+              <div ng-show="showStory" class="row pad25 border">
                 <p>
                   {{word.name}} was a {{word.job}} who loved technology. Although <!-- {{genderType.type==='male' ?'he':'she'}} -->{{gender2}} loved parts of {{gender1}} job, {{gender2}} absolutely hated  {{word.tediousTask}} and {{word.dirtyTask}}. So, {{word.name}} met with {{gender1}} life mentor {{word.celebrity}} who told {{gender3}} to learn how to {{word.skill}} with Thinkful. Thinkful didn't offer a course on {{word.skill}} so {{gender2}} studied programming instead. 
                 </p>
                 <p>
                   What a great decision! With {{gender1}} new skills, {{word.name}} built a(n) {{word.adjective}} robot named {{word.obnoxiousCelebrity}} that not only loved {{word.dirtyTask}} but did it {{word.hugeNumber}} faster. 
                 </p>
+                <div class="col-md-12"> 
+                <div class="col-md-4 col-md-offset-8 padr0">
+                  <form name="restart">              
+                    <button type="submit" ng-click="reset()" class="btn btn-default pull-right ">Start Over</button>
+                  </form>
+                </div>
               </div>
             </div>
           </div>

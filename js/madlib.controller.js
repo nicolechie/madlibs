@@ -1,4 +1,6 @@
-angular.module('madlib',[])
+angular.module('madlib',[
+	        // 'ngMessages'
+    ])
 .controller('MadlibController', ['$scope', function($scope){
 
 	$scope.genders = [
@@ -20,6 +22,20 @@ angular.module('madlib',[])
 		 	}
 		}
 	};
+	$scope.showWordOptions = true;
+	$scope.showStory = false;
+	$scope.generate = function() {
+		$scope.showWordOptions = false;
+		$scope.showStory = true;
+	}
+	$scope.reset = function() {
+		$scope.showWordOptions = true;
+		$scope.showStory = false;
+		$scope.word = {};
+	}
+// var myNewModule = angular.module('myNewModule', [
+//         'ngMessages'
+//     ]);
 
 	//  $scope.$watch('genderType', function(newValue, oldValue) {
 	//  	console.log(newValue, oldValue);
@@ -36,18 +52,18 @@ angular.module('madlib',[])
 	// });
 
 	 var word = {
-		 name: 'Name',
+		 name: '',
 		 female: ['Female Name', 'she', 'her'],
 		 male: ['Male Name', 'he', 'his'],
-		 job: 'Job Title',
-		 tediousTask: 'Tedious Task',
-		 dirtyTask: 'Diry Task',
-		 celebrity: 'Celebrity',
-		 skill: 'Useless Skill',
-		 adjective: 'Adjective',
-		 obnoxiousCelebrity: 'Obnoxious Celebrity',
-		 dirtyTask: 'Dirty Task',
-		 hugeNumber: 'Huge Number'
+		 job: '',
+		 tediousTask: '',
+		 dirtyTask: '',
+		 celebrity: '',
+		 skill: '',
+		 adjective: '',
+		 obnoxiousCelebrity: '',
+		 dirtyTask: '',
+		 hugeNumber: ''
 	 };
 	 $scope.word = word;
 }]);
