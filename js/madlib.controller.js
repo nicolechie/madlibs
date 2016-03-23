@@ -63,7 +63,7 @@ angular.module('madlib',[
 		 adjective: '',
 		 obnoxiousCelebrity: '',
 		 dirtyTask: '',
-		 hugeNumber:
+		 hugeNumber: ''
 	 };
 	 $scope.word = word;
 }]);
