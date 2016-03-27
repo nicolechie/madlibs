@@ -1,6 +1,5 @@
-angular.module('madlib',[
-	        // 'ngMessages'
-    ])
+angular.module('madlib',['ngAnimate'])
+
 .controller('MadlibController', ['$scope', function($scope){
 
 	$scope.genders = [
@@ -33,23 +32,6 @@ angular.module('madlib',[
 		$scope.showStory = false;
 		$scope.word = {};
 	}
-// var myNewModule = angular.module('myNewModule', [
-//         'ngMessages'
-//     ]);
-
-	//  $scope.$watch('genderType', function(newValue, oldValue) {
-	//  	console.log(newValue, oldValue);
-	//  	if(newValue) {
-	// 	 	if(newValue.type==="male") {
-	// 	 		$scope.gender1 = 'his'
-	// 	 		$scope.gender2 = 'he'
-	// 	 	}
-	// 	 	if(newValue.type==="female") {
-	// 	 		$scope.gender1 = 'her'
-	// 	 		$scope.gender2 = 'she'
-	// 	 	}
-	//  	}
-	// });
 
 	 var word = {
 		 name: '',
@@ -67,3 +49,21 @@ angular.module('madlib',[
 	 };
 	 $scope.word = word;
 }]);
+
+// var myNewModule = angular.module('myNewModule', [
+//         'ngMessages'
+//     ]);
+
+	//  $scope.$watch('genderType', function(newValue, oldValue) {
+	//  	console.log(newValue, oldValue);
+	//  	if(newValue) {
+	// 	 	if(newValue.type==="male") {
+	// 	 		$scope.gender1 = 'his'
+	// 	 		$scope.gender2 = 'he'
+	// 	 	}
+	// 	 	if(newValue.type==="female") {
+	// 	 		$scope.gender1 = 'her'
+	// 	 		$scope.gender2 = 'she'
+	// 	 	}
+	//  	}
+	// });
